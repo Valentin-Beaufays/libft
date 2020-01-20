@@ -6,7 +6,7 @@
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:52:49 by vbeaufay          #+#    #+#             */
-/*   Updated: 2019/11/06 17:36:10 by vbeaufay         ###   ########.fr       */
+/*   Updated: 2020/01/20 20:00:53 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_strchr(const char *s, int c);

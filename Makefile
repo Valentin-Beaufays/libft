@@ -25,6 +25,7 @@ FILES=	ft_memset.c\
 		ft_strrchr.c\
 		ft_strncmp.c\
 		ft_strlcpy.c\
+		ft_strncat.c\
 		ft_strlcat.c\
 		ft_strnstr.c\
 		ft_atoi.c\

@@ -6,7 +6,7 @@
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:52:49 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/01/20 21:16:23 by vbeaufay         ###   ########.fr       */
+/*   Updated: 2020/01/20 21:28:40 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t n);
+char				*ft_strncat(char *dst, const char *src, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t n);
 char				*ft_strnstr(const char *s1, const char *s2, size_t len);
 int					ft_atoi(const char *str);

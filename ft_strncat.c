@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 15:27:22 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/01/20 21:33:07 by vbeaufay         ###   ########.fr       */
+/*   Created: 2020/01/20 21:25:46 by vbeaufay          #+#    #+#             */
+/*   Updated: 2020/01/20 21:30:57 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strncat(char *dst, const char *src, size_t n)
 {
-	size_t	s1_len;
-	size_t	s2_len;
-	char	*res;
+	size_t	i;
+	size_t	dst_len;
 
-	if (!s1 || !s2)
-		return (0);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	if (!(res = malloc(sizeof(*res) * (s1_len + s2_len + 1))))
-		return (0);
-	res[0] = 0;
-	ft_strncat(res, s1, s1_len);
-	ft_strncat(res, s2, s2_len);
-	return (res);
+	i = 0;
+	dst_len = ft_strlen(dst);
+	while (src[i] && i < n)
+	{
+		dst[i + dst_len] = src[i];
+		i++;
+	}
+	dst[i + dst_len] = 0;
+	return (dst);
 }

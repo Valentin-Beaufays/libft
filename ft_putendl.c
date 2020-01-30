@@ -6,13 +6,13 @@
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 19:30:46 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/01/27 19:32:11 by vbeaufay         ###   ########.fr       */
+/*   Updated: 2020/01/27 20:32:58 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *s)
+void	ft_putendl(char *s)
 {
 	if(s)
 	{

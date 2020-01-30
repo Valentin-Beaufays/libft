@@ -6,7 +6,7 @@
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:27:30 by vbeaufay          #+#    #+#             */
-/*   Updated: 2019/11/04 17:56:29 by vbeaufay         ###   ########.fr       */
+/*   Updated: 2020/01/30 20:54:46 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	chr;
-	size_t	i;
-
-	chr = (char)c;
-	i = 0;
-	while (s[i] && s[i] != chr)
-		i++;
-	if (s[i] == chr)
-		return ((char *)s + i);
-	return (0);
+	while (*s && *s != (char)c)
+		s++;
+	return ((*s == (char)c) ? (char *)s : 0);
 }

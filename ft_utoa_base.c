@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/10 17:41:56 by vbeaufay          #+#    #+#             */
+/*   Updated: 2020/02/10 17:47:09 by vbeaufay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static size_t	number_size(unsigned int n, int base)
 {
@@ -8,7 +20,7 @@ static size_t	number_size(unsigned int n, int base)
 	size = 0;
 	while (n != 0)
 	{
-		n /= (base);
+		n /= base;
 		size++;
 	}
 	return (size);

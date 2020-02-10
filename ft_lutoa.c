@@ -1,56 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_lutoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 17:42:36 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/02/10 17:48:33 by vbeaufay         ###   ########.fr       */
+/*   Created: 2020/02/10 17:42:51 by vbeaufay          #+#    #+#             */
+/*   Updated: 2020/02/10 17:42:52 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-static size_t	number_size(int n, size_t base)
+#include "libft.h"
+#include <stdio.h>
+
+static size_t	number_size(unsigned long int n)
 {
 	size_t	size;
 
 	size = 0;
-	if (n <= 0)
-		size++;
 	while (n != 0)
 	{
-		n /= base;
+		n /= 10;
 		size++;
 	}
 	return (size);
 }
 
-char			*ft_itoa_base(int n, const char *base)
+char			*ft_lutoa(unsigned long int n)
 {
 	char	*res;
-	int		sign;
-	size_t	base_len;
 	size_t	i;
 
-	base_len = ft_strlen(base);
-	i = number_size(n, base_len);
-	sign = 1;
-	if (!(res = ft_calloc(i + 1, sizeof(*res))))
+	i = number_size(n);
+	if (!(res = malloc(sizeof(*res) * (i + 1))))
 		return (0);
+	res[i] = 0;
 	i--;
-	if (n < 0)
-	{
-		sign *= -1;
-		res[0] = '-';
-	}
 	if (n == 0)
 		res[i] = '0';
 	while (n != 0)
 	{
-		res[i] = base[(n % base_len) * sign];
-		n /= base_len;
+		res[i] = (n % 10) + '0';
+		n /= 10;
 		i--;
 	}
 	return (res);

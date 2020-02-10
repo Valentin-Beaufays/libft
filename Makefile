@@ -36,7 +36,11 @@ FILES=	ft_memset.c\
 		ft_strtrim.c\
 		ft_split.c\
 		ft_itoa.c\
+		ft_itoa_base.c\
+		ft_utoa.c\
 		ft_utoa_base.c\
+		ft_lutoa.c\
+		ft_lutoa_base.c\
 		ft_strmapi.c\
 		ft_putchar_fd.c\
 		ft_putchar.c\

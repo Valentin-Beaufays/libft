@@ -6,19 +6,20 @@
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:43:01 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/02/10 17:43:03 by vbeaufay         ###   ########.fr       */
+/*   Updated: 2020/02/13 21:35:53 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	number_size(unsigned long int n, int base)
 {
 	size_t	size;
 
 	size = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		n /= base;

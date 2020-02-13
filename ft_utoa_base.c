@@ -6,7 +6,7 @@
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:41:56 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/02/10 17:47:09 by vbeaufay         ###   ########.fr       */
+/*   Updated: 2020/02/10 18:36:29 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static size_t	number_size(unsigned int n, int base)
 	size_t	size;
 
 	size = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		n /= base;

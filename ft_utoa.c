@@ -6,7 +6,7 @@
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:43:19 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/02/10 17:43:21 by vbeaufay         ###   ########.fr       */
+/*   Updated: 2020/02/10 18:36:31 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static size_t	number_size(unsigned int n)
 	size_t	size;
 
 	size = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		n /= 10;

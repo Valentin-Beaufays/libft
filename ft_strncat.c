@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 14:07:10 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/02/12 16:56:17 by vbeaufay         ###   ########.fr       */
+/*   Created: 2020/01/20 21:25:46 by vbeaufay          #+#    #+#             */
+/*   Updated: 2020/01/20 21:30:57 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strncat(char *dst, const char *src, size_t n)
 {
-	size_t	len;
-	char	*cpy;
+	size_t	i;
+	size_t	dst_len;
 
-	len = ft_strlen(s) + 1;
-	if (!(cpy = malloc(sizeof(*s) * len)))
-		return (0);
-	ft_strlcpy(cpy, s, len);
-	return (cpy);
+	i = 0;
+	dst_len = ft_strlen(dst);
+	while (src[i] && i < n)
+	{
+		dst[i + dst_len] = src[i];
+		i++;
+	}
+	dst[i + dst_len] = 0;
+	return (dst);
 }

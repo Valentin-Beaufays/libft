@@ -1,25 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 14:07:10 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/02/12 16:56:17 by vbeaufay         ###   ########.fr       */
+/*   Created: 2020/02/10 17:43:19 by vbeaufay          #+#    #+#             */
+/*   Updated: 2020/02/10 18:36:31 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+static size_t	number_size(unsigned int n)
 {
-	size_t	len;
-	char	*cpy;
+	size_t	size;
 
-	len = ft_strlen(s) + 1;
-	if (!(cpy = malloc(sizeof(*s) * len)))
+	size = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n /= 10;
+		size++;
+	}
+	return (size);
+}
+
+char			*ft_utoa(unsigned int n)
+{
+	char	*res;
+	size_t	i;
+
+	i = number_size(n);
+	if (!(res = malloc(sizeof(*res) * (i + 1))))
 		return (0);
-	ft_strlcpy(cpy, s, len);
-	return (cpy);
+	res[i] = 0;
+	i--;
+	if (n == 0)
+		res[i] = '0';
+	while (n != 0)
+	{
+		res[i] = (n % 10) + 48;
+		n /= 10;
+		i--;
+	}
+	return (res);
 }

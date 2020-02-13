@@ -61,13 +61,11 @@ static char		**get_res(char const *s, char c)
 static char		*get_word(char const *s, char c)
 {
 	size_t	len;
-	size_t	i;
 	char	*word;
 
 	len = 0;
 	while (s[len] && s[len] != c)
 		len++;
-	i = 0;
 	if (!(word = malloc(sizeof(*word) * (len + 1))))
 		return (0);
 	ft_strlcpy(word, s, len + 1);

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbeaufay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 14:07:10 by vbeaufay          #+#    #+#             */
-/*   Updated: 2020/02/12 16:56:17 by vbeaufay         ###   ########.fr       */
+/*   Created: 2020/01/20 19:59:20 by vbeaufay          #+#    #+#             */
+/*   Updated: 2020/01/20 20:01:19 by vbeaufay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strdup(const char *s)
+int	ft_isspace(int c)
 {
-	size_t	len;
-	char	*cpy;
-
-	len = ft_strlen(s) + 1;
-	if (!(cpy = malloc(sizeof(*s) * len)))
-		return (0);
-	ft_strlcpy(cpy, s, len);
-	return (cpy);
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	return (0);
 }

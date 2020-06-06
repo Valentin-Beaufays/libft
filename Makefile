@@ -49,7 +49,9 @@ FILES=	ft_memset.c\
 		ft_putendl_fd.c\
 		ft_putendl.c\
 		ft_putnbr_fd.c\
-		ft_putnbr.c
+		ft_putnbr.c\
+		get_next_line/get_next_line.c\
+		get_next_line/get_next_line_utils.c
 
 BONUS=	ft_lstnew_bonus.c\
 		ft_lstadd_front_bonus.c\
